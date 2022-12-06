@@ -1,4 +1,4 @@
-import { deduplicate } from '../utils/deduplicate.mjs';
+import { withArray } from '../utils/withArray.mjs';
 import { readFile } from '../utils/readFile.mjs';
 import { sum } from '../utils/sum.mjs';
 
@@ -24,7 +24,7 @@ const splitInto3s = (lines) => {
 
 const getCommonInThree = (three) => three[0].find((letter) => three.every((line) => line.includes(letter)));
 
-const getRepeatedItems = (backpack) => deduplicate(backpack.c1.filter((item) => backpack.c2.find((anotherItem) => item === anotherItem)));
+const getRepeatedItems = (backpack) => withArray(backpack.c1.filter((item) => backpack.c2.find((anotherItem) => item === anotherItem))).deduplicate();
 
 const toCompartments = (line) => ({
   c1: line.substr(0, Math.floor(line.length / 2)).split(''),
