@@ -33,11 +33,11 @@ const readMove = (moveLine) => {
   return { amount, from: from - 1, to: to - 1 };
 }
 
-/******************************************************************************
+/******************************************************************************\
   solution for both parts lol
   the first one differs only by the reverse() call executed on "picked" array
   to simulate placing them in different order 
-******************************************************************************/
+\******************************************************************************/
 
 const stackNumbers = lines.find((line) => line.match(/^[\d ]+$/));
 const stackLines = lines.filter((line) => line.match(/^\[[A-Z]\] +/));
